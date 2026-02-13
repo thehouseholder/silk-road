@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Silk Road Quest — Preview (Women 30–55 Repositioning)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; }
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+  html { scroll-behavior: smooth; }
+  .img-hover img { transition: transform 0.5s ease; }
+  .img-hover:hover img { transform: scale(1.03); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+  .faq-answer.open { max-height: 300px; }
+  #floating-cta { writing-mode: vertical-rl; transition: opacity 0.3s, transform 0.3s; }
+  #floating-cta.hidden-cta { opacity: 0; pointer-events: none; transform: translateX(100%); }
+  /* CTA button hover */
+  .cta-primary { background: #B0845A; transition: all 0.3s; box-shadow: 0 2px 8px rgba(176,132,90,0.3); }
+  .cta-primary:hover { background: #9A7350; box-shadow: 0 4px 16px rgba(176,132,90,0.45); transform: translateY(-1px); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     UPDATED COLOR PALETTE — more visual range:
+
+     #FAF7F2  Warm Ivory (primary bg)
+     #FFF9F5  Blush Cream (alternate bg)
+     #F0EBE3  Warm Linen (third bg tone)
+     #F9F6F2  Warm Sand (section accent bg)
+     #E8DDD0  Deeper Sand
+     #D4C4B0  Warm Taupe
+     #3D3631  Warm Charcoal (primary text)
+     #6B5E54  Soft Brown (body text)
+     #B0845A  Deeper Medallion Gold (CTA — richer contrast)
+     #9A7350  Gold hover
+     #C4956A  Soft Gold (accent text, icons)
+     #D4A0A0  Dusty Rose (decorative, testimonial bg)
+     #FAF5F5  Light Dusty Rose (section bg)
+     #A8B5A0  Sage Green (decorative)
+     #F7F9F5  Light Sage (section bg)
+     #E8D5C4  Champagne (borders)
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- ── Floating CTA ─────────────────────────────────────────── -->
+<button id="floating-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})"
+  class="fixed right-0 top-1/2 -translate-y-1/2 z-50 px-2 py-3 md:px-3 md:py-4 text-white text-xs md:text-sm tracking-wider shadow-lg hidden-cta font-medium"
+  style="background:#B0845A; border-radius:8px 0 0 8px;">
+  Begin Your Journey
+</button>
+
+<!-- ── Header ───────────────────────────────────────────────── -->
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm" style="background:rgba(250,247,242,0.95); border-bottom:1px solid #E8D5C4;">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <img src="https://storage.googleapis.com/msgsndr/uIVvJUFcEX0ifhJEnnFP/media/6969868fed7c363cbb618dc6.png"
+         alt="Way of the Hero" class="h-10" style="filter:brightness(0.3) sepia(0.4);" />
+    <nav class="hidden md:flex gap-8 text-sm" style="color:#3D3631;">
+      <a href="#about" class="hover:opacity-70 transition-opacity">The Journey</a>
+      <a href="#how-it-works" class="hover:opacity-70 transition-opacity">How It Works</a>
+      <a href="#voices" class="hover:opacity-70 transition-opacity">Voices</a>
+      <a href="#pricing" class="hover:opacity-70 transition-opacity">Join</a>
+    </nav>
+    <button class="md:hidden" style="color:#3D3631;" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="hidden md:hidden px-6 pb-4 space-y-3 text-sm" style="color:#3D3631;">
+    <a href="#about" class="block">The Journey</a>
+    <a href="#how-it-works" class="block">How It Works</a>
+    <a href="#voices" class="block">Voices</a>
+    <a href="#pricing" class="block">Join</a>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     1. HERO — warm gradient background, bigger presence
+     ══════════════════════════════════════════════════════════ -->
+<section id="about" class="pt-24 pb-0 px-0 relative overflow-hidden" style="background: linear-gradient(135deg, #FAF7F2 0%, #F0EBE3 40%, #F9F6F2 70%, #E8DDD0 100%);">
+  <!-- Decorative circles -->
+  <div class="absolute top-20 left-10 w-64 h-64 rounded-full opacity-15" style="background:#D4A0A0; filter:blur(60px);"></div>
+  <div class="absolute bottom-10 right-20 w-48 h-48 rounded-full opacity-12" style="background:#A8B5A0; filter:blur(50px);"></div>
+  <div class="absolute top-40 right-1/3 w-32 h-32 rounded-full opacity-10" style="background:#C4956A; filter:blur(40px);"></div>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-10 items-center pt-12 pb-16">
+      <!-- Copy -->
+      <div class="space-y-6 relative z-10">
+        <p class="text-xs tracking-widest uppercase font-medium" style="color:#B0845A; letter-spacing:0.2em;">The 21-Day Silk Road Quest</p>
+        <h1 class="serif text-4xl md:text-[3.4rem] leading-tight" style="color:#3D3631; font-weight:400;">
+          Remember what it feels like<br>to be <em style="color:#B0845A; font-style:italic;">you</em>.
+        </h1>
+        <p class="text-lg leading-relaxed" style="color:#6B5E54;">
+          You see other women taking weekend retreats and think, <em>"I can't do that."</em> You scroll past beautiful mornings while yours blur together. Somewhere along the way, wonder became something other people had time for.
+        </p>
+        <p class="text-lg leading-relaxed" style="color:#6B5E54;">
+          This is your permission slip. Twenty-one days of small, surprising moments woven into the life you already have — no suitcase required.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-3">
+          <a href="#pricing" class="cta-primary inline-block px-9 py-4 text-white text-sm tracking-wider rounded-full text-center font-medium">
+            Begin Your Journey
+          </a>
+          <a href="#how-it-works" class="inline-block px-9 py-4 text-sm tracking-wider rounded-full transition-all text-center font-medium hover:bg-white/50"
+             style="border:1.5px solid #B0845A; color:#B0845A;">
+            See How It Works
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio:4/5;">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80"
+               alt="Woman enjoying a peaceful morning moment" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-4 -left-4 w-28 h-28 rounded-full opacity-35" style="background:#D4A0A0;"></div>
+        <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full opacity-25" style="background:#A8B5A0;"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Soft wave divider -->
+  <div style="height:40px; background:linear-gradient(to bottom, transparent, #FFF9F5);"></div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     2. THE FEELING (Problem) — on blush cream
+     ══════════════════════════════════════════════════════════ -->
+<section id="how-it-works" class="px-6 py-20" style="background:#FFF9F5;">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <div class="rounded-2xl overflow-hidden shadow-lg img-hover" style="aspect-ratio:3/4;">
+        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&q=80"
+             alt="Reflective moment" class="w-full h-full object-cover" />
+      </div>
+      <div class="space-y-6">
+        <h2 class="serif text-3xl md:text-4xl leading-snug" style="color:#3D3631; font-weight:400;">
+          You love your people.<br>You handle the days.
+        </h2>
+        <p class="text-lg leading-relaxed" style="color:#6B5E54;">
+          But somewhere along the way, your mornings started to blur — and "fine" stopped feeling alive.
+        </p>
+        <div class="space-y-4 pt-2">
+          <div class="flex items-start gap-3">
+            <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+            <p style="color:#6B5E54;">"I'm doing everything… and still feel empty."</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+            <p style="color:#6B5E54;">"I should be happier than I am."</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+            <p style="color:#6B5E54;">"I don't even know what I want anymore."</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+            <p style="color:#6B5E54;">"I scroll at night because I'm too tired to feel."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     3. WHAT YOU NEED — SAGE GREEN background (contrast moment)
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#F7F9F5;">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="serif text-3xl md:text-4xl mb-14" style="color:#3D3631; font-weight:400;">
+      What You Need
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="rounded-2xl p-8 text-left shadow-sm" style="background:white; border:1px solid #C8D4C2;">
+        <span class="text-4xl mb-4 block" style="color:#B0845A;">1</span>
+        <h3 class="text-xl mb-3" style="color:#3D3631; font-weight:500;">Intentional Movement</h3>
+        <p class="leading-relaxed" style="color:#6B5E54;">Your body was built to move — and when it doesn't, everything starts to feel heavy. Not exercise. Not performance. Just the kind of movement that reminds your nervous system you're alive.</p>
+      </div>
+      <div class="rounded-2xl p-8 text-left shadow-sm" style="background:white; border:1px solid #C8D4C2;">
+        <span class="text-4xl mb-4 block" style="color:#B0845A;">2</span>
+        <h3 class="text-xl mb-3" style="color:#3D3631; font-weight:500;">Daily Brave Moments</h3>
+        <p class="leading-relaxed" style="color:#6B5E54;">Comfort is safe — but it's also where days start to blur. Every person needs small moments of courage to feel like themselves again. A new route. A real conversation. Something that breaks the pattern.</p>
+      </div>
+      <div class="rounded-2xl p-8 text-left shadow-sm" style="background:white; border:1px solid #C8D4C2;">
+        <span class="text-4xl mb-4 block" style="color:#B0845A;">3</span>
+        <h3 class="text-xl mb-3" style="color:#3D3631; font-weight:500;">Support (community)</h3>
+        <p class="leading-relaxed" style="color:#6B5E54;">We weren't meant to carry everything alone. People who feel seen — who have even one person walking beside them — stay the course. Connection isn't a bonus. It's how humans were designed to grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     4. INTRODUCING THE QUEST — warm ivory
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#FAF7F2;">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="text-sm tracking-widest uppercase mb-4 font-medium" style="color:#B0845A;">That's why we created</p>
+      <h2 class="serif text-4xl md:text-5xl mb-6" style="color:#3D3631; font-weight:400;">The Silk Road Quest</h2>
+      <p class="text-lg max-w-2xl mx-auto leading-relaxed" style="color:#6B5E54;">
+        A 21-day experience designed to weave wonder back into real life — without asking you to leave it. Think of it as romanticizing your actual days, on purpose, with a little guidance and a lot of grace.
+      </p>
+    </div>
+    <div class="space-y-5">
+      <div class="flex gap-5 items-start p-5 rounded-xl shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <div class="flex-shrink-0 mt-1 w-7 h-7 rounded-full flex items-center justify-center" style="background:#B0845A;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h3 class="text-lg mb-1" style="color:#3D3631; font-weight:500;">21 Days of Guided Wonder</h3>
+          <p class="leading-relaxed" style="color:#6B5E54;">A gentle, structured journey that brings beauty, curiosity, and presence back into your everyday — from your kitchen table to your morning walk.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start p-5 rounded-xl shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <div class="flex-shrink-0 mt-1 w-7 h-7 rounded-full flex items-center justify-center" style="background:#B0845A;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h3 class="text-lg mb-1" style="color:#3D3631; font-weight:500;">One Daily Invitation</h3>
+          <p class="leading-relaxed" style="color:#6B5E54;">Each day, a prompt arrives. Not a demand — an invitation. You choose how far to take it. Whipped cream heart on your coffee? A detour through a neighborhood you've never walked? It's yours to shape.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start p-5 rounded-xl shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <div class="flex-shrink-0 mt-1 w-7 h-7 rounded-full flex items-center justify-center" style="background:#B0845A;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h3 class="text-lg mb-1" style="color:#3D3631; font-weight:500;">Movement That Feels Good</h3>
+          <p class="leading-relaxed" style="color:#6B5E54;">30 minutes of whatever makes your body happy — a walk with the dog, a dance in the kitchen, yoga on the porch. No performance. No tracking. Just moving.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start p-5 rounded-xl shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <div class="flex-shrink-0 mt-1 w-7 h-7 rounded-full flex items-center justify-center" style="background:#B0845A;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h3 class="text-lg mb-1" style="color:#3D3631; font-weight:500;">A Simple Daily Rhythm</h3>
+          <p class="leading-relaxed" style="color:#6B5E54;">Movement + one small, surprising moment. That's it. No homework. No modules. Just a rhythm you'll actually look forward to.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start p-5 rounded-xl shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <div class="flex-shrink-0 mt-1 w-7 h-7 rounded-full flex items-center justify-center" style="background:#B0845A;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <h3 class="text-lg mb-1" style="color:#3D3631; font-weight:500;">A Circle of Women Walking Beside You</h3>
+          <p class="leading-relaxed" style="color:#6B5E54;">Optional community of women on the same path — sharing small wins, cheering each other on, and proving you don't have to do any of this alone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     5. WHY THIS WORKS — warm linen background
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#F0EBE3;">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="serif text-3xl md:text-4xl mb-6" style="color:#3D3631; font-weight:400;">Why can't I just make it happen?</h2>
+      <p class="text-lg leading-relaxed max-w-2xl mx-auto" style="color:#6B5E54;">
+        Because motivation can be deceptive. It shows up when it wants.
+      </p>
+    </div>
+    <div class="max-w-2xl mx-auto">
+      <p class="text-xl mb-8" style="color:#3D3631; font-weight:500;">This works because of it's cadence:</p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+          <p class="text-lg" style="color:#6B5E54;">Daily prompt = no decision fatigue</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+          <p class="text-lg" style="color:#6B5E54;">Tiny bold reps = confidence returns</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+          <p class="text-lg" style="color:#6B5E54;">Movement = state change</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+          <p class="text-lg" style="color:#6B5E54;">21 days = a finish line you'll actually reach</p>
+        </div>
+      </div>
+      <p class="text-lg leading-relaxed mt-10 mb-8" style="color:#3D3631; font-weight:500;">
+        You don't need a personality makeover. You need your day to stop feeling like a treadmill.
+      </p>
+      <p class="text-base leading-relaxed italic" style="color:#6B5E54;">
+        Built by a former professor (PhD, Performance Studies) with 15 years leading leadership expeditions — designed for busy women who can't "go away" to get their life back.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     6. OUTCOMES — DUSTY ROSE background (emotional pause)
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#FAF5F5;">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="serif text-3xl md:text-4xl" style="color:#3D3631; font-weight:400;">What Blooms from 21 Days</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 p-4 rounded-xl shadow-sm" style="background:white; border:1px solid #D4BFB0;">
+        <span style="color:#A8B5A0; font-size:1.1rem;">❋</span>
+        <p style="color:#3D3631;"><strong>Days feel distinct again</strong> — You remember Tuesday.</p>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-xl shadow-sm" style="background:white; border:1px solid #D4BFB0;">
+        <span style="color:#A8B5A0; font-size:1.1rem;">❋</span>
+        <p style="color:#3D3631;"><strong>You start the day without the phone</strong> — 20 seconds at the window.</p>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-xl shadow-sm" style="background:white; border:1px solid #D4BFB0;">
+        <span style="color:#A8B5A0; font-size:1.1rem;">❋</span>
+        <p style="color:#3D3631;"><strong>Small rituals return</strong> — One song while dinner cooks.</p>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-xl shadow-sm" style="background:white; border:1px solid #D4BFB0;">
+        <span style="color:#A8B5A0; font-size:1.1rem;">❋</span>
+        <p style="color:#3D3631;"><strong>You feel present in public</strong> — One warm sentence at drop-off.</p>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-xl shadow-sm" style="background:white; border:1px solid #D4BFB0;">
+        <span style="color:#A8B5A0; font-size:1.1rem;">❋</span>
+        <p style="color:#3D3631;"><strong>You feel yourself come back online</strong> — 45 seconds. The day stops owning you.</p>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-xl shadow-sm" style="background:white; border:1px solid #D4BFB0;">
+        <span style="color:#A8B5A0; font-size:1.1rem;">❋</span>
+        <p style="color:#3D3631;"><strong>Nights don't disappear</strong> — No scroll spiral. Better sleep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     6. TESTIMONIALS — warm sand background, distinct moment
+     ══════════════════════════════════════════════════════════ -->
+<section id="voices" class="px-6 py-20" style="background:#F9F6F2;">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="serif text-3xl md:text-4xl" style="color:#3D3631; font-weight:400;">Real Words From Real Quests</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="p-6 rounded-2xl flex flex-col justify-between shadow-sm" style="background:white; border:1px solid #D4C4B0;">
+        <div class="mb-4">
+          <span class="text-4xl leading-none" style="color:#D4A0A0;">"</span>
+          <p class="text-lg leading-relaxed mt-1" style="color:#3D3631;">By taking performance out of it, I became present — and found a new way to love what I already loved.</p>
+        </div>
+        <div class="pt-3" style="border-top:1px solid #E8D5C4;">
+          <p class="text-sm font-medium" style="color:#B0845A;">— T. G.</p>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl flex flex-col justify-between shadow-sm" style="background:white; border:1px solid #D4C4B0;">
+        <div class="mb-4">
+          <span class="text-4xl leading-none" style="color:#D4A0A0;">"</span>
+          <p class="text-lg leading-relaxed mt-1" style="color:#3D3631;">This quest got me to slow down my busyness, move my body, and rediscover my normal.</p>
+        </div>
+        <div class="pt-3" style="border-top:1px solid #E8D5C4;">
+          <p class="text-sm font-medium" style="color:#B0845A;">— T. S.</p>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl flex flex-col justify-between shadow-sm" style="background:white; border:1px solid #D4C4B0;">
+        <div class="mb-4">
+          <span class="text-4xl leading-none" style="color:#D4A0A0;">"</span>
+          <p class="text-lg leading-relaxed mt-1" style="color:#3D3631;">I… felt like a kid again!!</p>
+        </div>
+        <div class="pt-3" style="border-top:1px solid #E8D5C4;">
+          <p class="text-sm font-medium" style="color:#B0845A;">— M. P.</p>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl flex flex-col justify-between shadow-sm" style="background:white; border:1px solid #D4C4B0;">
+        <div class="mb-4">
+          <span class="text-4xl leading-none" style="color:#D4A0A0;">"</span>
+          <p class="text-lg leading-relaxed mt-1" style="color:#3D3631;">I left the headphones at home and took in everything around me.</p>
+        </div>
+        <div class="pt-3" style="border-top:1px solid #E8D5C4;">
+          <p class="text-sm font-medium" style="color:#B0845A;">— H. H.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     7. FINISHER KIT — warm ivory
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#FAF7F2;">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-14 items-center">
+      <div class="order-2 md:order-1">
+        <div class="rounded-2xl overflow-hidden shadow-lg p-8" style="background:#FFF9F5;">
+          <img src="https://storage.googleapis.com/msgsndr/uIVvJUFcEX0ifhJEnnFP/media/698115fb10efd6eeaf676a0f.png"
+               alt="Quest Finisher Medallion" class="w-full h-auto" />
+        </div>
+      </div>
+      <div class="order-1 md:order-2 space-y-6">
+        <h2 class="serif text-3xl md:text-4xl leading-tight" style="color:#3D3631; font-weight:400;">
+          Something to hold.<br>Something you earned.
+        </h2>
+        <div class="space-y-4 text-lg leading-relaxed" style="color:#6B5E54;">
+          <p>Not a participation ribbon — a medallion with weight in your hand that says: "For 21 days, I lived from the inside out."</p>
+        </div>
+        <div class="flex items-center gap-2 pt-2">
+          <span style="color:#B0845A;">✦</span>
+          <span class="text-sm tracking-wider" style="color:#3D3631;">Included in Premium & Elite tiers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     8. GALLERY — blush cream
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#FFF9F5;">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="serif text-3xl md:text-4xl mb-3" style="color:#3D3631; font-weight:400;">The spark is in the ordinary</h2>
+      <p class="text-lg max-w-2xl mx-auto leading-relaxed" style="color:#6B5E54;">
+        The quest doesn't ask you to climb a mountain. It asks you to notice the morning light on your coffee, to dance while dinner simmers, to take the long way home just because.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="rounded-xl overflow-hidden img-hover relative group shadow-sm" style="aspect-ratio:1/1;">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Beautiful latte art in morning light" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-white text-sm">A slow morning, on purpose</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden img-hover relative group shadow-sm" style="aspect-ratio:1/1;">
+        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&q=80" alt="Beautiful homemade breakfast" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-white text-sm">Pancakes that feel like a celebration</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden img-hover relative group shadow-sm" style="aspect-ratio:1/1;">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Woman baking at home" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-white text-sm">Flour on the counter, music on</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden img-hover relative group shadow-sm" style="aspect-ratio:1/1;">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80" alt="Reading by a sunlit window" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-white text-sm">A chapter just for you</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden img-hover relative group shadow-sm" style="aspect-ratio:1/1;">
+        <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&q=80" alt="Candlelit evening at home" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-white text-sm">An evening that actually feels like yours</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden img-hover relative group shadow-sm" style="aspect-ratio:1/1;">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Sunlit garden" class="w-full h-full object-cover" />
+        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+          <p class="text-white text-sm">Beauty was right outside the door</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     9. PRICING — warm ivory
+     ══════════════════════════════════════════════════════════ -->
+<section id="pricing" class="px-6 py-20" style="background:#FAF7F2;">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="serif text-4xl md:text-5xl mb-3" style="color:#3D3631; font-weight:400;">Choose your journey</h2>
+      <p class="text-lg" style="color:#6B5E54;">Every path leads to the same place: back to you.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <!-- Base -->
+      <div class="rounded-2xl p-8 flex flex-col shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <h3 class="text-xl text-center mb-3" style="color:#3D3631; font-weight:500;">Base Journey</h3>
+        <div class="text-center mb-6"><span class="text-5xl" style="color:#3D3631; font-weight:600;">$49</span></div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Daily invitations + 21-day structure</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Morning email / text delivery</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Access to the Quest circle</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Midpoint reflection check-in</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Digital completion seal</span></li>
+        </ul>
+        <a href="https://link.fastpaydirect.com/payment-link/697beb4ec80eaf178f911ff2" target="_blank" rel="noopener"
+           class="w-full py-4 rounded-full text-center text-sm tracking-wider transition-all hover:shadow-md block font-medium" style="background:#FAF7F2; border:1.5px solid #B0845A; color:#B0845A;">
+          Begin Your Journey
+        </a>
+      </div>
+      <!-- Premium -->
+      <div class="rounded-2xl p-8 flex flex-col relative shadow-lg" style="background:#FAF5F5; border:2px solid #B0845A;">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1 rounded-full text-xs text-white tracking-wider font-medium" style="background:#B0845A;">Most Loved</div>
+        <h3 class="text-xl text-center mb-3" style="color:#3D3631; font-weight:500;">Premium Journey</h3>
+        <div class="text-center mb-6"><span class="text-5xl" style="color:#3D3631; font-weight:600;">$99</span></div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#B0845A;">✦</span><span>Everything in Base</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#B0845A;">✦</span><span>Quest Finisher Kit: medallion + shirt (shipped)</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#B0845A;">✦</span><span>Silk Road Dispatches (photos + stories from the road)</span></li>
+        </ul>
+        <a href="https://portal.wayofthehero.com/silk-road-premium-quest-checkout" target="_blank" rel="noopener"
+           class="w-full py-4 rounded-full text-center text-sm tracking-wider text-white transition-all hover:shadow-md block font-medium" style="background:#B0845A;">
+          Begin Your Journey
+        </a>
+      </div>
+      <!-- Elite -->
+      <div class="rounded-2xl p-8 flex flex-col shadow-sm" style="background:white; border:1px solid #E8D5C4;">
+        <h3 class="text-xl text-center mb-3" style="color:#3D3631; font-weight:500;">Elite Journey</h3>
+        <div class="text-center mb-6"><span class="text-5xl" style="color:#3D3631; font-weight:600;">$249</span></div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Everything in Premium</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Behind-the-scenes Silk Road Ride Dispatches (Mar 29–Apr 17): video + photos + stories</span></li>
+          <li class="flex items-start gap-2 text-sm" style="color:#6B5E54;"><span style="color:#A8B5A0;">✦</span><span>Founder's Pricing: $30 off your next Quest</span></li>
+        </ul>
+        <a href="https://portal.wayofthehero.com/silk-road-elite-quest-checkout" target="_blank" rel="noopener"
+           class="w-full py-4 rounded-full text-center text-sm tracking-wider transition-all hover:shadow-md block font-medium" style="background:#FAF7F2; border:1.5px solid #B0845A; color:#B0845A;">
+          Begin Your Journey
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     DON'T WAIT — urgency section
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#F0EBE3;">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="serif text-3xl md:text-4xl mb-6" style="color:#3D3631; font-weight:400;">Don't wait.</h2>
+    <p class="text-lg leading-relaxed mb-6" style="color:#6B5E54;">
+      If you're thinking "I'll join later," don't.
+    </p>
+    <p class="text-lg leading-relaxed mb-2" style="color:#3D3631; font-weight:500;">Later becomes:</p>
+    <div class="space-y-3 max-w-md mx-auto text-left mb-8">
+      <div class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+        <p class="text-lg" style="color:#6B5E54;">"after this week"</p>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+        <p class="text-lg" style="color:#6B5E54;">"after the kids' schedule calms down"</p>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="mt-1 flex-shrink-0 text-lg" style="color:#B0845A;">✦</span>
+        <p class="text-lg" style="color:#6B5E54;">"after I feel more like it"</p>
+      </div>
+    </div>
+    <p class="text-lg leading-relaxed mb-4" style="color:#6B5E54;">
+      And then it's April and you're still scrolling at night.
+    </p>
+    <p class="text-xl leading-relaxed" style="color:#3D3631; font-weight:500;">
+      Your new day starts tomorrow! This deadline is the feature. It removes negotiation with yourself.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     MEET LAYNE — blush cream
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#FFF9F5;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h2 class="serif text-3xl md:text-4xl leading-tight" style="color:#3D3631; font-weight:400;">Meet Layne Gneiting</h2>
+        <p class="text-lg font-medium" style="color:#B0845A;">Your guide for the 21-day journey</p>
+        <div class="space-y-4 text-lg leading-relaxed" style="color:#6B5E54;">
+          <p>For 15 years, Layne has led transformational journeys that teach follow-through under real-world conditions. He understands what happens when life gets chaotic — and how to keep moving forward anyway.</p>
+          <p>The Silk Road Quest was born from that experience: simple daily invitations woven into the life you already have, designed to bring wonder back without asking you to escape.</p>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg mx-auto" style="aspect-ratio:4/5; max-width:400px;">
+        <img src="https://assets.cdn.filesafe.space/uIVvJUFcEX0ifhJEnnFP/media/a5a08868-d373-4ff8-b57f-7739723800ce.jpg"
+             alt="Layne Gneiting" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     11. FAQ — warm ivory
+     ══════════════════════════════════════════════════════════ -->
+<section id="faq" class="px-6 py-20" style="background:#FAF7F2;">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl mb-12 text-center" style="color:#3D3631; font-weight:400;">Questions you might be holding</h2>
+    <div class="space-y-3" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     12. FINAL CTA + FOOTER — warm sand (strong close)
+     ══════════════════════════════════════════════════════════ -->
+<section class="px-6 py-20" style="background:#F9F6F2;">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="serif text-3xl md:text-4xl mb-4" style="color:#3D3631; font-weight:400;">You deserve to feel wonder again.</h2>
+    <p class="text-lg mb-8 leading-relaxed" style="color:#6B5E54;">
+      For women who've carried a lot for a long time — this is 21 days of choosing your life on purpose. No escape. No suitcase. Just small actions that bring beauty back into the days you already have.
+    </p>
+    <a href="#pricing" class="cta-primary inline-block px-10 py-4 text-white text-sm tracking-wider rounded-full mb-12 font-medium">
+      Begin Your Journey
+    </a>
+    <div class="pt-8" style="border-top:1px solid #D4C4B0;">
+      <p class="text-sm" style="color:#6B5E54;">adventures@wayofthehero.com</p>
+      <p class="text-sm mt-2" style="color:#A09890;">© 2026 Way of the Hero. All rights reserved.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Scripts ─────────────────────────────────────────────── -->
+<script>
+const faqs = [
+  { q: "Do I have to post publicly?", a: "No. Private by design. (But available if you want.)" },
+  { q: "What if I miss a day?", a: "You resume. No shame." },
+  { q: "I'm not athletic.", a: "Great. Movement is whatever fits your body." },
+  { q: "How long per day?", a: "30 minutes + 1–10 minutes." }
+];
+
+const faqList = document.getElementById('faq-list');
+faqs.forEach((faq, i) => {
+  const div = document.createElement('div');
+  div.className = 'rounded-xl overflow-hidden shadow-sm';
+  div.style.cssText = 'background:white; border:1px solid #E8D5C4;';
+  div.innerHTML = `
+    <button onclick="toggleFaq(${i})" class="w-full text-left p-5 flex items-center justify-between" style="color:#3D3631;">
+      <span class="text-lg pr-4" style="font-weight:500;">${faq.q}</span>
+      <span id="faq-icon-${i}" class="flex-shrink-0 text-xl transition-all" style="color:#B0845A;">+</span>
+    </button>
+    <div id="faq-answer-${i}" class="faq-answer px-5">
+      <p class="leading-relaxed pb-5" style="color:#6B5E54;">${faq.a}</p>
+    </div>
+  `;
+  faqList.appendChild(div);
+});
+
+function toggleFaq(i) {
+  const answer = document.getElementById('faq-answer-' + i);
+  const icon = document.getElementById('faq-icon-' + i);
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('[id^="faq-icon-"]').forEach(ic => { ic.textContent = '+'; ic.style.transform = 'rotate(0)'; });
+  if (!isOpen) {
+    answer.classList.add('open');
+    icon.textContent = '×';
+  }
+}
+
+const floatingCta = document.getElementById('floating-cta');
+window.addEventListener('scroll', () => {
+  const hero = document.getElementById('about');
+  const pricing = document.getElementById('pricing');
+  if (!hero || !pricing) return;
+  const mid = window.scrollY + window.innerHeight / 2;
+  const heroBot = hero.offsetTop + hero.offsetHeight;
+  const priceTop = pricing.offsetTop;
+  const priceBot = priceTop + pricing.offsetHeight;
+  const inPricing = mid >= priceTop && mid <= priceBot;
+  if (window.scrollY > heroBot && !inPricing) {
+    floatingCta.classList.remove('hidden-cta');
+  } else {
+    floatingCta.classList.add('hidden-cta');
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
